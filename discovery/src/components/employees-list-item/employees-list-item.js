@@ -1,7 +1,7 @@
 import { Component } from 'react';
-import './employers-list-item.css';
+import './employees-list-item.css';
 
-class EmployersListItem extends Component {
+class EmployeesListItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ class EmployersListItem extends Component {
         }))
     }
     render() {
-        const {name, salary} = this.props;
+        const {name, salary, onDelete} = this.props;
         const {increase} = this.state;
         let classNames = "list-group-item d-flex justify-content-between like";
         if (increase) {
@@ -35,8 +35,8 @@ class EmployersListItem extends Component {
                         </button>
 
                         <button type="button"
-                                className="btn-trash btn-sm "
-                                >
+                                className="btn-trash btn-sm"
+                                onClick={onDelete}>
                             <i className="fas fa-trash"></i>
                         </button>
                         <i className="fas fa-star"></i>
@@ -47,4 +47,4 @@ class EmployersListItem extends Component {
     }
 }
 
-export default EmployersListItem;
+export default EmployeesListItem;
